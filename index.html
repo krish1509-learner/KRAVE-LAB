@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KRAVE LAB | Smash Burgers, Loaded Fries & Iced Matcha</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="font-sans antialiased selection:bg-matcha selection:text-charcoal"
+  >
+    <header
+      class="sticky top-0 z-40 bg-cream/95 dark:bg-charcoal/95 backdrop-blur-md border-b-2 border-charcoal dark:border-[#F8F7F2]"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+        aria-label="Primary Navigation"
+      >
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div
+            class="w-10 h-10 rounded-xl bg-matcha border-2 border-charcoal flex items-center justify-center shadow-[3px_3px_0px_#121212] group-hover:rotate-6 transition-transform"
+          >
+            <svg
+              class="w-6 h-6 text-charcoal"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 10h16a2 2 0 0 0 0-4H4a2 2 0 0 0 0 4Z" />
+              <path d="M4 14h16" />
+              <path d="M5 18h14a1 1 0 0 0 1-1v-1H4v1a1 1 0 0 0 1 1Z" />
+            </svg>
+          </div>
+          <span class="font-display font-extrabold text-2xl tracking-tight">
+            KRAVE<span class="text-coral">LAB</span>
+          </span>
+        </a>
+
+        <div
+          class="hidden md:flex items-center gap-7 font-bold text-sm uppercase tracking-wider"
+        >
+          <a href="#about" class="hover:text-coral transition-colors"
+            >Our Story</a
+          >
+          <a href="#menu" class="hover:text-coral transition-colors"
+            >The Menu</a
+          >
+          <a href="#specials" class="hover:text-coral transition-colors"
+            >Drops & Deals</a
+          >
+          <a href="#vibes" class="hover:text-coral transition-colors"
+            >Vibe Check</a
+          >
+          <a href="#visit" class="hover:text-coral transition-colors"
+            >Pull Up</a
+          >
+        </div>
+
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle Dark or Light Mode"
+            class="p-2.5 rounded-xl bg-lilac text-charcoal brutal-btn flex items-center justify-center"
+            title="Switch Vibe (Light / Dark)"
+          >
+            <svg
+              id="sunIcon"
+              class="w-5 h-5 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+              ></path>
+            </svg>
+            <svg
+              id="moonIcon"
+              class="w-5 h-5 block dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <button
+            id="openCartBtn"
+            type="button"
+            class="px-3.5 py-2.5 rounded-xl bg-matcha text-charcoal font-extrabold text-sm brutal-btn flex items-center gap-2"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+              ></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="hidden sm:inline">BAG</span>
+            <span
+              id="cartBadge"
+              class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-extrabold rounded-full bg-charcoal text-cream"
+              >0</span
+            >
+          </button>
+
+          <button
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open Navigation Menu"
+            class="md:hidden p-2.5 rounded-xl bg-cream dark:bg-[#1E1E1E] brutal-btn"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t-2 border-charcoal dark:border-[#F8F7F2] bg-cream dark:bg-charcoal px-4 py-5 space-y-3 font-bold uppercase text-sm"
+      >
+        <a href="#about" class="block py-2 hover:text-coral">Our Story</a>
+        <a href="#menu" class="block py-2 hover:text-coral">The Menu</a>
+        <a href="#specials" class="block py-2 hover:text-coral"
+          >Drops & Deals</a
+        >
+        <a href="#vibes" class="block py-2 hover:text-coral">Vibe Check</a>
+        <a href="#visit" class="block py-2 hover:text-coral">Pull Up</a>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lilac text-charcoal font-extrabold text-xs sm:text-sm uppercase tracking-wider brutal-border brutal-shadow"
+            >
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-coral animate-ping"
+              ></span>
+              OPEN LATE TILL 2 AM • PUNE'S CULT HANGOUT
+            </div>
+
+            <h1
+              class="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight"
+            >
+              NO CRUMBS LEFT. <br />
+              JUST PURE
+              <span
+                class="inline-block bg-matcha text-charcoal px-3 py-0.5 rounded-2xl brutal-border -rotate-1"
+                >KRAVE.</span
+              >
+            </h1>
+
+            <p
+              class="text-base sm:text-xl font-medium opacity-90 max-w-xl leading-relaxed"
+            >
+              Crispy lace-edge smash burgers, peri-peri loaded fries, and
+              ceremonial iced matcha drops engineered for your main-character
+              cravings.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="#menu"
+                class="px-7 py-4 rounded-2xl bg-coral text-white font-extrabold text-base sm:text-lg brutal-btn inline-flex items-center gap-2"
+              >
+                Explore The Menu
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#specials"
+                class="px-7 py-4 rounded-2xl bg-cream dark:bg-[#1E1E1E] font-extrabold text-base sm:text-lg brutal-btn"
+              >
+                Grab Student Combo ⚡
+              </a>
+            </div>
+
+            <div
+              class="pt-4 flex flex-wrap items-center gap-6 text-sm font-bold"
+            >
+              <div class="flex items-center gap-2">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-butter text-charcoal brutal-border font-extrabold"
+                  >4.9 ★</span
+                >
+                <span>2,400+ Gen-Z Foodies</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-matcha text-charcoal brutal-border font-extrabold"
+                  >100%</span
+                >
+                <span>Fresh Smashed to Order</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 relative">
+            <div
+              class="hidden sm:flex absolute -top-6 -right-4 z-20 w-24 h-24 rounded-full bg-butter text-charcoal brutal-border brutal-shadow items-center justify-center text-center font-display font-extrabold text-xs leading-tight p-2 animate-spin-slow"
+            >
+              ZERO<br />SEED<br />OILS
+            </div>
+
+            <div
+              class="relative rounded-3xl overflow-hidden brutal-border brutal-shadow-lg bg-coral aspect-[4/4.3]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+                alt="Double Smash Cheeseburger with melted cheddar and crispy edges"
+                data-fallback="https://placehold.co/800x860/FF5733/121212?text=DOUBLE+SMASH+BURGER"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-cream/95 dark:bg-charcoal/95 backdrop-blur-sm brutal-border flex items-center justify-between"
+              >
+                <div>
+                  <p class="text-xs font-extrabold uppercase text-coral">
+                    Signature Drop #01
+                  </p>
+                  <p class="font-display font-extrabold text-lg">
+                    The OG Truffle Smash
+                  </p>
+                </div>
+                <span
+                  class="px-3 py-1.5 rounded-xl bg-matcha text-charcoal font-extrabold text-sm brutal-border"
+                  >₹279</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="animate-float absolute -bottom-5 -left-3 sm:-left-6 z-20 px-4 py-2.5 rounded-2xl bg-matcha text-charcoal font-extrabold text-xs sm:text-sm brutal-border brutal-shadow flex items-center gap-2"
+            >
+              <span>🔥</span> HOTTEST SPOT ON FC ROAD
+            </div>
+
+            <div
+              class="animate-float-rev absolute top-6 -left-3 sm:-left-6 z-20 px-4 py-2 rounded-full bg-lilac text-charcoal font-extrabold text-xs uppercase brutal-border brutal-shadow"
+            >
+              🍵 Ceremonial Uji Matcha
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="w-full bg-matcha text-charcoal border-y-2 border-charcoal py-3.5 overflow-hidden select-none"
+      >
+        <div
+          class="marquee-track font-display font-extrabold text-base sm:text-lg uppercase tracking-wider"
+        >
+          <span class="mx-6">🍔 FRESHLY SMASHED DAILY</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🍵 STRAWBERRY CLOUD MATCHA</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🍟 TRIPLE-COOKED SKIN-ON FRIES</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🎓 20% OFF WITH STUDENT ID</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🌙 LATE NIGHT CRAVINGS TILL 2 AM</span>
+          <span class="mx-6">•</span>
+
+          <span class="mx-6">🍔 FRESHLY SMASHED DAILY</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🍵 STRAWBERRY CLOUD MATCHA</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🍟 TRIPLE-COOKED SKIN-ON FRIES</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🎓 20% OFF WITH STUDENT ID</span>
+          <span class="mx-6">•</span>
+          <span class="mx-6">🌙 LATE NIGHT CRAVINGS TILL 2 AM</span>
+          <span class="mx-6">•</span>
+        </div>
+      </div>
+
+      <section
+        aria-label="Brand Aesthetic System"
+        class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div
+          class="rounded-3xl p-5 sm:p-6 bg-cream dark:bg-[#1A1A1A] brutal-border brutal-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+        >
+          <div>
+            <span
+              class="text-xs font-extrabold uppercase tracking-widest text-coral"
+              >The Krave Lab Visual Identity</span
+            >
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl">
+              Streetwear Neo-Brutalism Palette
+            </h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-cream text-charcoal border-2 border-charcoal text-xs font-extrabold"
+            >
+              <span
+                class="w-4 h-4 rounded-full bg-[#FFFDF7] border border-charcoal"
+              ></span>
+              #FFFDF7 Cream
+            </div>
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-matcha text-charcoal border-2 border-charcoal text-xs font-extrabold"
+            >
+              <span
+                class="w-4 h-4 rounded-full bg-[#C5F82A] border border-charcoal"
+              ></span>
+              #C5F82A Matcha
+            </div>
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-coral text-white border-2 border-charcoal text-xs font-extrabold"
+            >
+              <span
+                class="w-4 h-4 rounded-full bg-[#FF5733] border border-charcoal"
+              ></span>
+              #FF5733 Coral
+            </div>
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-lilac text-charcoal border-2 border-charcoal text-xs font-extrabold"
+            >
+              <span
+                class="w-4 h-4 rounded-full bg-[#C9B6FF] border border-charcoal"
+              ></span>
+              #C9B6FF Lilac
+            </div>
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-charcoal text-cream border-2 border-cream text-xs font-extrabold"
+            >
+              <span
+                class="w-4 h-4 rounded-full bg-[#121212] border border-cream"
+              ></span>
+              #121212 Ink
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            <div
+              class="rounded-3xl overflow-hidden brutal-border brutal-shadow aspect-[3/4] translate-y-4"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80"
+                alt="Juicy smashed burger patty sizzling on the grill"
+                data-fallback="https://placehold.co/500x650/C5F82A/121212?text=SMASH+GRILL"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="rounded-3xl overflow-hidden brutal-border brutal-shadow aspect-[3/4] -translate-y-2"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=600&q=80"
+                alt="Aesthetic iced matcha latte poured over ice"
+                data-fallback="https://placehold.co/500x650/C9B6FF/121212?text=ICED+MATCHA"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-6">
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-butter text-charcoal font-extrabold text-xs uppercase tracking-wider brutal-border"
+            >
+              OUR ORIGIN STORY
+            </span>
+            <h2
+              class="font-display font-extrabold text-4xl sm:text-5xl leading-tight"
+            >
+              BORN FROM 1 AM STUDY SESSIONS & STREETWEAR CULTURE.
+            </h2>
+            <p class="text-base sm:text-lg opacity-90 leading-relaxed">
+              We got tired of boring cafes with overpriced mid food and zero
+              soul. So we built <strong>KRAVE LAB</strong>—a high-energy burger
+              & matcha bar where crispy-edged smash patties meet ceremonial
+              Japanese matcha, lo-fi hip-hop beats, and hyper-aesthetic
+              interiors made for your camera roll.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              <div
+                class="p-5 rounded-2xl bg-matcha text-charcoal brutal-border brutal-shadow"
+              >
+                <div class="text-2xl mb-2">🥩</div>
+                <h3 class="font-display font-extrabold text-lg">
+                  Lace-Edge Smash
+                </h3>
+                <p class="text-sm font-medium mt-1">
+                  Smashed paper-thin on a 450°F steel flat-top for maximum
+                  caramelized crunch.
+                </p>
+              </div>
+              <div
+                class="p-5 rounded-2xl bg-lilac text-charcoal brutal-border brutal-shadow"
+              >
+                <div class="text-2xl mb-2">🍵</div>
+                <h3 class="font-display font-extrabold text-lg">
+                  First-Harvest Matcha
+                </h3>
+                <p class="text-sm font-medium mt-1">
+                  Stone-ground Uji green tea whisked to order with oat milk &
+                  real fruit purees.
+                </p>
+              </div>
+              <div
+                class="p-5 rounded-2xl bg-coral text-white brutal-border brutal-shadow"
+              >
+                <div class="text-2xl mb-2">🔌</div>
+                <h3 class="font-display font-extrabold text-lg">
+                  Plug & Vibe Ready
+                </h3>
+                <p class="text-sm font-medium mt-1">
+                  Gigabit Wi-Fi, booth charging ports, and curated playlists for
+                  late-night grinds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="menu"
+        class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10"
+        >
+          <div>
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-coral text-white font-extrabold text-xs uppercase tracking-wider brutal-border mb-3"
+            >
+              THE DROP LIST
+            </span>
+            <h2 class="font-display font-extrabold text-4xl sm:text-5xl">
+              CURATED FOR PEAK CRAVINGS.
+            </h2>
+          </div>
+
+          <div
+            id="menuFilters"
+            class="flex flex-wrap gap-2.5"
+            role="tablist"
+            aria-label="Menu Categories"
+          >
+            <button
+              type="button"
+              data-category="all"
+              class="filter-btn active px-4 py-2.5 rounded-xl font-extrabold text-sm brutal-btn bg-charcoal text-cream dark:bg-matcha dark:text-charcoal"
+            >
+              All Drops (9)
+            </button>
+            <button
+              type="button"
+              data-category="burgers"
+              class="filter-btn px-4 py-2.5 rounded-xl font-extrabold text-sm brutal-btn bg-cream dark:bg-[#1E1E1E]"
+            >
+              🍔 Smash Burgers
+            </button>
+            <button
+              type="button"
+              data-category="sides"
+              class="filter-btn px-4 py-2.5 rounded-xl font-extrabold text-sm brutal-btn bg-cream dark:bg-[#1E1E1E]"
+            >
+              🍟 Loaded Sides
+            </button>
+            <button
+              type="button"
+              data-category="sips"
+              class="filter-btn px-4 py-2.5 rounded-xl font-extrabold text-sm brutal-btn bg-cream dark:bg-[#1E1E1E]"
+            >
+              🍵 Sips & Matcha
+            </button>
+            <button
+              type="button"
+              data-category="sweets"
+              class="filter-btn px-4 py-2.5 rounded-xl font-extrabold text-sm brutal-btn bg-cream dark:bg-[#1E1E1E]"
+            >
+              🍪 Sweet Treats
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="menuGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
+        ></div>
+      </section>
+
+      <section
+        id="specials"
+        class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div
+          class="rounded-[2rem] bg-lilac text-charcoal p-6 sm:p-10 lg:p-12 brutal-border brutal-shadow-lg"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal text-matcha font-extrabold text-xs uppercase tracking-wider"
+              >
+                ⚡ LIMITED TIME STUDENT & NIGHT-OWL DROP
+              </div>
+              <h2
+                class="font-display font-extrabold text-4xl sm:text-5xl leading-tight"
+              >
+                THE MIDNIGHT STUDY FUEL BOX @ ₹399
+              </h2>
+              <p class="text-base sm:text-lg font-semibold leading-relaxed">
+                Get our signature <strong>OG Truffle Smash Burger</strong> +
+                <strong>Peri-Peri Loaded Fries</strong> + any
+                <strong>Iced Ceremonial Matcha</strong> in one aesthetic
+                collector box. Normally ₹567—save ₹168 every night after 9 PM!
+              </p>
+
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <div
+                  class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-cream border-2 border-charcoal border-dashed"
+                >
+                  <span
+                    class="text-xs font-extrabold uppercase text-charcoal/70"
+                    >CODE:</span
+                  >
+                  <span
+                    id="promoCodeText"
+                    class="font-display font-extrabold text-lg tracking-wider"
+                    >KRAVE20</span
+                  >
+                  <button
+                    id="copyPromoBtn"
+                    type="button"
+                    class="px-3 py-1 rounded-lg bg-matcha text-charcoal text-xs font-extrabold border-2 border-charcoal hover:bg-butter transition-colors"
+                  >
+                    COPY
+                  </button>
+                </div>
+
+                <button
+                  type="button"
+                  data-add-special-combo
+                  class="px-6 py-3.5 rounded-2xl bg-coral text-white font-extrabold text-base brutal-btn"
+                >
+                  + Add Combo to Bag (₹399)
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div
+                class="relative rounded-3xl overflow-hidden border-2 border-charcoal shadow-[6px_6px_0px_#121212] bg-butter"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=85"
+                  alt="Combo meal featuring burger, crispy fries and drink"
+                  data-fallback="https://placehold.co/700x550/FFE66D/121212?text=MIDNIGHT+FUEL+COMBO"
+                  class="w-full h-72 sm:h-80 object-cover"
+                />
+                <div
+                  class="p-4 bg-cream border-t-2 border-charcoal flex items-center justify-between"
+                >
+                  <span class="font-extrabold text-sm"
+                    >🔥 412 boxes claimed this week</span
+                  >
+                  <span
+                    class="px-2.5 py-1 rounded-lg bg-matcha text-xs font-extrabold border border-charcoal"
+                    >SAVE 30%</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="vibes"
+        class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-matcha text-charcoal font-extrabold text-xs uppercase tracking-wider brutal-border"
+          >
+            RECEIPTS & REVIEWS
+          </span>
+          <h2 class="font-display font-extrabold text-4xl sm:text-5xl">
+            PASSED THE VIBE CHECK.
+          </h2>
+          <p class="text-base opacity-85 font-medium">
+            Don't just take our word for it—here's what the campus crowd &
+            late-night regulars are posting.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article
+            class="brutal-card rounded-3xl p-6 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-butter text-charcoal text-xs font-extrabold border border-charcoal"
+                  >★★★★★ 5.0</span
+                >
+                <span class="text-xs font-bold opacity-60">2 days ago</span>
+              </div>
+              <p class="font-semibold text-base leading-relaxed">
+                "The crispy lace edges on the Oklahoma Onion Smash are actually
+                insane. Paired it with the Strawberry Cloud Matcha and literally
+                ascended during finals week."
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-3 mt-6 pt-4 border-t-2 border-dashed border-charcoal/20 dark:border-white/20"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-coral text-white font-display font-extrabold flex items-center justify-center border-2 border-charcoal"
+              >
+                A
+              </div>
+              <div>
+                <p class="font-extrabold text-sm">Aarav Kulkarni</p>
+                <p class="text-xs opacity-75">@aarav.builds • CS Undergrad</p>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="brutal-card rounded-3xl p-6 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-matcha text-charcoal text-xs font-extrabold border border-charcoal"
+                  >★★★★★ 5.0</span
+                >
+                <span class="text-xs font-bold opacity-60">5 days ago</span>
+              </div>
+              <p class="font-semibold text-base leading-relaxed">
+                "Finally a spot in Pune that understands proper ceremonial
+                matcha AND stays open till 2 AM. The neo-brutalist interior +
+                playlists are unmatched."
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-3 mt-6 pt-4 border-t-2 border-dashed border-charcoal/20 dark:border-white/20"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-lilac text-charcoal font-display font-extrabold flex items-center justify-center border-2 border-charcoal"
+              >
+                R
+              </div>
+              <div>
+                <p class="font-extrabold text-sm">Riya Deshmukh</p>
+                <p class="text-xs opacity-75">@riyawears • Fashion & Design</p>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="brutal-card rounded-3xl p-6 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-coral text-white text-xs font-extrabold border border-charcoal"
+                  >★★★★★ 5.0</span
+                >
+                <span class="text-xs font-bold opacity-60">1 week ago</span>
+              </div>
+              <p class="font-semibold text-base leading-relaxed">
+                "Kimchi Cheese Loaded Fries + Nashville Hot Chicken Smash is our
+                squad's mandatory Friday ritual. Fast service, zero soggy buns,
+                pure flavor."
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-3 mt-6 pt-4 border-t-2 border-dashed border-charcoal/20 dark:border-white/20"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-butter text-charcoal font-display font-extrabold flex items-center justify-center border-2 border-charcoal"
+              >
+                K
+              </div>
+              <div>
+                <p class="font-extrabold text-sm">Kabir Malhotra</p>
+                <p class="text-xs opacity-75">@kabir.eats • Food Blogger</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="visit"
+        class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div
+            class="lg:col-span-6 brutal-card rounded-3xl p-7 sm:p-9 space-y-6"
+          >
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-butter text-charcoal font-extrabold text-xs uppercase tracking-wider brutal-border"
+            >
+              PULL UP TO THE LAB
+            </span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl">
+              HOURS, LOCATION & PLUGS.
+            </h2>
+
+            <div class="space-y-4 text-sm sm:text-base">
+              <div
+                class="p-4 rounded-2xl bg-cream dark:bg-[#262626] border-2 border-charcoal dark:border-white/20"
+              >
+                <p class="font-extrabold text-coral uppercase text-xs mb-1">
+                  📍 Flagship Hangout Spot
+                </p>
+                <p class="font-bold">
+                  Plot 42, Lane 5, Off Fergusson College (FC) Road,
+                  Shivajinagar, Pune 411004
+                </p>
+              </div>
+
+              <div
+                class="p-4 rounded-2xl bg-cream dark:bg-[#262626] border-2 border-charcoal dark:border-white/20"
+              >
+                <p class="font-extrabold text-coral uppercase text-xs mb-2">
+                  🕒 Opening Hours
+                </p>
+                <ul class="space-y-1.5 font-bold">
+                  <li class="flex justify-between">
+                    <span>Mon – Thu (Study & Chill):</span>
+                    <span>12:00 PM – 12:00 AM</span>
+                  </li>
+                  <li class="flex justify-between text-coral">
+                    <span>Fri – Sun (Late Night Drops):</span>
+                    <span>12:00 PM – 02:00 AM</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-bold">
+                <div
+                  class="p-3.5 rounded-2xl bg-matcha text-charcoal border-2 border-charcoal"
+                >
+                  <span class="block text-xs uppercase font-extrabold"
+                    >Hotline / WhatsApp</span
+                  >
+                  <span>+91 98230 45120</span>
+                </div>
+                <div
+                  class="p-3.5 rounded-2xl bg-lilac text-charcoal border-2 border-charcoal"
+                >
+                  <span class="block text-xs uppercase font-extrabold"
+                    >Collabs & Bookings</span
+                  >
+                  <span>yo@kravelab.in</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 brutal-card rounded-3xl p-7 sm:p-9">
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-coral text-white font-extrabold text-xs uppercase tracking-wider brutal-border mb-3"
+            >
+              SKIP THE QUEUE
+            </span>
+            <h3 class="font-display font-extrabold text-3xl sm:text-4xl mb-2">
+              RESERVE A BOOTH.
+            </h3>
+            <p class="text-sm opacity-80 font-medium mb-6">
+              Coming with your squad? Lock in a neon booth with power outlets in
+              10 seconds.
+            </p>
+
+            <form id="bookingForm" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="guestName"
+                    class="block text-xs font-extrabold uppercase mb-1.5"
+                    >Your Name / Handle</label
+                  >
+                  <input
+                    id="guestName"
+                    type="text"
+                    required
+                    placeholder="e.g. Krish Sharma"
+                    class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-[#262626] border-2 border-charcoal dark:border-[#F8F7F2] font-semibold focus:outline-none focus:ring-2 focus:ring-matcha"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="guestCount"
+                    class="block text-xs font-extrabold uppercase mb-1.5"
+                    >Squad Size</label
+                  >
+                  <select
+                    id="guestCount"
+                    class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-[#262626] border-2 border-charcoal dark:border-[#F8F7F2] font-semibold focus:outline-none focus:ring-2 focus:ring-matcha"
+                  >
+                    <option value="2">2 People (Cozy Booth)</option>
+                    <option value="4" selected>4 People (Squad Table)</option>
+                    <option value="6">6+ People (VIP Corner)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="visitTime"
+                    class="block text-xs font-extrabold uppercase mb-1.5"
+                    >Time Slot Today</label
+                  >
+                  <input
+                    id="visitTime"
+                    type="time"
+                    value="20:30"
+                    required
+                    class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-[#262626] border-2 border-charcoal dark:border-[#F8F7F2] font-semibold focus:outline-none focus:ring-2 focus:ring-matcha"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="guestPhone"
+                    class="block text-xs font-extrabold uppercase mb-1.5"
+                    >WhatsApp Number</label
+                  >
+                  <input
+                    id="guestPhone"
+                    type="tel"
+                    required
+                    placeholder="+91 98XXX XXXXX"
+                    class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-[#262626] border-2 border-charcoal dark:border-[#F8F7F2] font-semibold focus:outline-none focus:ring-2 focus:ring-matcha"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-4 rounded-2xl bg-matcha text-charcoal font-extrabold text-base brutal-btn mt-2"
+              >
+                Lock My Table ⚡
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="border-t-2 border-charcoal dark:border-[#F8F7F2] bg-charcoal text-cream py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+      >
+        <div class="space-y-2">
+          <div class="flex items-center gap-2.5">
+            <span
+              class="w-8 h-8 rounded-lg bg-matcha text-charcoal font-display font-extrabold flex items-center justify-center"
+              >K</span
+            >
+            <span class="font-display font-extrabold text-2xl"
+              >KRAVE<span class="text-coral">LAB</span></span
+            >
+          </div>
+          <p class="text-sm text-cream/75 max-w-md">
+            Craft smash burgers, triple-cooked fries & ceremonial matcha. Built
+            for late-night thinkers, creators & foodies.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-sm font-bold">
+          <a href="#about" class="hover:text-matcha transition-colors">Story</a>
+          <a href="#menu" class="hover:text-matcha transition-colors">Menu</a>
+          <a href="#specials" class="hover:text-matcha transition-colors"
+            >Student Deals</a
+          >
+          <a href="#visit" class="hover:text-matcha transition-colors"
+            >Location</a
+          >
+        </div>
+
+        <div class="text-xs text-cream/60 font-medium">
+          © 2026 KRAVE LAB HOSPITALITY. ALL RIGHTS RESERVED.
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="cartOverlay"
+      class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs"
+    >
+      <aside
+        class="fixed right-0 top-0 h-full w-full max-w-md bg-cream dark:bg-charcoal border-l-2 border-charcoal dark:border-[#F8F7F2] p-6 flex flex-col justify-between shadow-2xl"
+      >
+        <div>
+          <div
+            class="flex items-center justify-between pb-4 border-b-2 border-charcoal dark:border-[#F8F7F2]"
+          >
+            <h3 class="font-display font-extrabold text-2xl">
+              YOUR KRAVE BAG 🛍️
+            </h3>
+            <button
+              id="closeCartBtn"
+              type="button"
+              aria-label="Close Order Bag"
+              class="p-2 rounded-xl bg-coral text-white brutal-btn"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div
+            id="cartItemsContainer"
+            class="mt-5 space-y-3 max-h-[58vh] overflow-y-auto pr-1"
+          ></div>
+        </div>
+
+        <div
+          class="pt-4 border-t-2 border-charcoal dark:border-[#F8F7F2] space-y-4"
+        >
+          <div
+            class="flex items-center justify-between font-display font-extrabold text-xl"
+          >
+            <span>TOTAL</span>
+            <span id="cartTotal">₹0</span>
+          </div>
+          <button
+            id="checkoutBtn"
+            type="button"
+            class="w-full py-4 rounded-2xl bg-matcha text-charcoal font-extrabold text-base brutal-btn"
+          >
+            Place Express Pickup Order 🚀
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <div
+      id="toastBox"
+      class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 translate-y-4"
+    >
+      <div
+        id="toastMessage"
+        class="px-5 py-3 rounded-2xl bg-charcoal text-matcha dark:bg-matcha dark:text-charcoal font-extrabold text-sm brutal-border brutal-shadow"
+      >
+        Added to bag!
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
